@@ -1,0 +1,206 @@
+:root {
+  --logo-green: #35a22c;
+  --text-white: #ffffff;
+  --text-black-thin: #585858;
+  --text-black-bold: #1a1d2d;
+  --font-roboto: "Roboto", sans-serif;
+}
+html {
+  font-family: "Roboto", sans-serif !important;
+}
+body {
+  position: relative;
+}
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+.navbar-light .navbar-brand span {
+  color: var(--text-white) !important;
+  font-size: 2.25rem;
+  font-weight: 400;
+}
+.navbar-brand i {
+  width: 42px;
+  height: 45px;
+  color: var(--logo-green);
+  font-size: 42px;
+}
+.navbar-nav > .nav-item > .nav-link {
+  color: var(--text-white);
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: var(--font-roboto);
+}
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show > .nav-link {
+  color: var(--logo-green);
+}
+/* .navbar-light .navbar-nav .active::before {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  left: 0;
+  position: absolute;
+  background-color: var(--logo-green);
+  bottom: 0px;
+} */
+.navbar-nav > .nav-item > .nav-link:hover {
+  color: var(--logo-green);
+}
+.nav-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+header .nav-item::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  left: -100%;
+  position: absolute;
+  background-color: var(--logo-green);
+  bottom: 0px;
+  transition: 0.5s linear;
+}
+header .nav-item:hover:after {
+  left: 0;
+}
+header .active.nav-item::after {
+  left: 0;
+}
+
+/* --- start carousel ---- */
+.carousel-inner .carousel-item img {
+  height: 100vh;
+  position: relative;
+  object-fit: cover;
+}
+.carousel-inner .carousel-item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.65;
+  z-index: 1;
+}
+.carousel-indicators li {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.carousel-indicators li.active {
+  background-color: var(--logo-green);
+}
+
+.carousel-caption {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+
+  transition: opacity 0.3s linear;
+}
+.active .carousel-caption {
+  opacity: 1;
+}
+.carousel-caption img {
+  width: 140px;
+  height: 148px !important;
+  border-radius: 50%;
+  /* bottom: -20%;
+  opacity: 0;
+  transition: bottom 0.3s linear, opacity 0.3s linear; */
+}
+/* .active .carousel-caption img,
+.active .carousel-caption h5,
+.active .carousel-caption p {
+  bottom: 0;
+  opacity: 1;
+} */
+.carousel-caption h5 {
+  /* opacity: 0; */
+  font-size: 3.5rem;
+  color: var(--text-white);
+  margin-bottom: 9px;
+  /* bottom: -20%; */
+  position: relative;
+  /* transition: bottom 0.4s linear 0.6s, opacity 0.4s linear 0.6s; */
+}
+.carousel-caption p {
+  /* opacity: 0; */
+  font-size: 1.5rem;
+  color: var(--text-white);
+  margin-bottom: 16px;
+  position: relative;
+  /* bottom: -20%;
+  transition: bottom 0.4s linear 1s, opacity 0.4s linear 1s; */
+}
+
+.carousel-caption img.animate__animated.animate__fadeInUp {
+  --animate-duration: 2s;
+  --animate-delay: 0.9s;
+}
+.carousel-caption h5.animate__animated.animate__fadeInUp {
+  --animate-duration: 2s;
+  --animate-delay: 0.9s;
+}
+.carousel-caption p.animate__animated.animate__fadeInUp {
+  --animate-duration: 2s;
+  --animate-delay: 0.9s;
+}
+
+/* ---- start project --- */
+
+.project > h2 {
+  font-size: 2.25rem;
+  color: var(--text-black-bold);
+}
+.project > p {
+  color: var(--text-black-thin);
+}
+
+.project__content--btn-list label {
+  color: var(--text-black-thin);
+  border: 1px solid #1a1d2d;
+}
+.project__content--btn-list label:hover {
+  background-color: #fff;
+  color: var(--text-black-thin);
+  border: 1px solid #1a1d2d;
+}
+.project .active.nav-link {
+  background-color: var(--logo-green);
+  color: var(--text-white);
+}
+.project .card {
+  border: 2px solid transparent;
+}
+.project .card:hover .card-body {
+  border-left: 2px solid var(--logo-green) !important;
+  border-right: 2px solid var(--logo-green) !important;
+  border-bottom: 2px solid var(--logo-green) !important;
+  border-top: 0;
+}
+
+.project .card:hover .card-body p.card-text {
+  color: var(--logo-green);
+}
+
+/* ---- end project --- */
